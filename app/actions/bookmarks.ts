@@ -1,6 +1,5 @@
 'use server'
 
-import { revalidatePath } from 'next/cache'
 import { createClient } from '@/lib/supabase/server'
 import { bookmarkSchema } from '@/lib/validations/bookmark'
 import type { Database } from '@/types/database'

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import LoginButton from './LoginButton'
@@ -17,10 +18,13 @@ export default async function LoginPage() {
       <div className="relative bg-white rounded-3xl shadow-xl p-8 sm:p-12 md:p-14 max-w-lg w-full border border-gray-200 animate-fade-in-up">
         {/* Logo Section */}
         <div className="text-center mb-10">
-          <img 
-            src="/favicon.png" 
-            alt="Astra-mark Logo" 
+          <Image
+            src="/favicon.png"
+            alt="Astra-mark Logo"
+            width={96}
+            height={96}
             className="w-24 h-24 mx-auto mb-8 object-contain rounded-3xl"
+            priority
           />
           <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-4">
             Astra-mark

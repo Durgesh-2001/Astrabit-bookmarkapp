@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useState } from 'react'
 import Link from 'next/link'
 import SignOutButton from './SignOutButton'
@@ -17,9 +18,11 @@ export default function DashboardHeader({ userEmail }: DashboardHeaderProps) {
         <div className="flex items-center justify-between gap-3">
           {/* Left: Logo + Brand */}
           <div className="flex items-center gap-2 sm:gap-3">
-            <img 
-              src="/favicon.png" 
-              alt="Astra-mark Logo" 
+            <Image
+              src="/favicon.png"
+              alt="Astra-mark Logo"
+              width={40}
+              height={40}
               className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg object-contain"
             />
             <h1 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 whitespace-nowrap">
