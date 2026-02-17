@@ -19,15 +19,15 @@ export default async function LoginPage() {
         {/* Logo Section */}
         <div className="text-center mb-10">
           <Image
-            src="/favicon.png"
-            alt="Astra-mark Logo"
-            width={96}
-            height={96}
-            className="w-24 h-24 mx-auto mb-8 object-contain rounded-3xl"
+            src="/logo.svg"
+            alt="Abstra-mark Logo"
+            width={302}
+            height={72}
+            className="h-16 w-auto mx-auto mb-8 object-contain"
             priority
           />
           <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-4">
-            Astra-mark
+            Abstra-mark
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
             Your smart bookmark manager
@@ -62,7 +62,7 @@ export default async function LoginPage() {
         {/* Back to Home Button */}
         <div className="text-center">
           <a 
-            href="/home"
+            href="/"
             className="inline-flex items-center gap-2 px-6 py-3 bg-gray-100 text-gray-700 font-semibold rounded-xl hover:bg-gray-200 transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-105"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

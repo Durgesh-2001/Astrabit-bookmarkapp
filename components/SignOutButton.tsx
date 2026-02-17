@@ -13,7 +13,7 @@ export default function SignOutButton() {
       setLoading(true)
       const supabase = createClient()
       await supabase.auth.signOut()
-      router.push('/home')
+      router.push('/')
       router.refresh()
     } catch (error) {
       setLoading(false)

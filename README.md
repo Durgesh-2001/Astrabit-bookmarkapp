@@ -1,4 +1,4 @@
-# Astra-mark 🔖
+# Abstra-mark 🔖
 
 A real-time bookmark manager where users can save, view, and delete bookmarks with instant synchronization across tabs. Built with Next.js 15 App Router, Supabase, and Tailwind CSS.
 

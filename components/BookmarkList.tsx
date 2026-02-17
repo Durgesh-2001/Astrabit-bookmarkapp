@@ -4,6 +4,7 @@ import { useEffect, useState, useTransition, useCallback } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { createBookmark, deleteBookmark } from '@/app/actions/bookmarks'
 import type { Bookmark } from '@/types/database'
+import DeleteConfirmationModal from './DeleteConfirmationModal'
 
 interface BookmarkListProps {
   initialBookmarks: Bookmark[]
@@ -17,6 +18,11 @@ export default function BookmarkList({ initialBookmarks }: BookmarkListProps) {
   const [deletingId, setDeletingId] = useState<string | null>(null)
   const [syncStatus, setSyncStatus] = useState<'syncing' | 'synced' | 'error'>('synced')
   const [lastSync, setLastSync] = useState<Date>(new Date())
+  const [deleteModal, setDeleteModal] = useState<{ isOpen: boolean; id: string; title: string }>({ 
+    isOpen: false, 
+    id: '', 
+    title: '' 
+  })
 
   // Polling approach - Check for updates every 2 seconds
   useEffect(() => {
@@ -116,11 +122,13 @@ export default function BookmarkList({ initialBookmarks }: BookmarkListProps) {
     })
   }
 
-  const handleDelete = useCallback(async (id: string, title: string) => {
+  const handleDelete = useCallback((id: string, title: string) => {
     if (deletingId) return // Prevent multiple deletes
-    
-    const confirmed = confirm(`Delete "${title}"?`)
-    if (!confirmed) return
+    setDeleteModal({ isOpen: true, id, title })
+  }, [deletingId])
+
+  const confirmDelete = useCallback(async () => {
+    const { id } = deleteModal
     
     setDeletingId(id)
     
@@ -133,8 +141,13 @@ export default function BookmarkList({ initialBookmarks }: BookmarkListProps) {
       // Realtime subscription will remove the bookmark automatically
       
       setDeletingId(null)
+      setDeleteModal({ isOpen: false, id: '', title: '' })
     })
-  }, [deletingId])
+  }, [deleteModal])
+
+  const cancelDelete = useCallback(() => {
+    setDeleteModal({ isOpen: false, id: '', title: '' })
+  }, [])
 
   return (
     <div className="space-y-4 sm:space-y-6">
@@ -331,6 +344,15 @@ export default function BookmarkList({ initialBookmarks }: BookmarkListProps) {
           })}
         </div>
       )}
+
+      {/* Delete Confirmation Modal */}
+      <DeleteConfirmationModal
+        isOpen={deleteModal.isOpen}
+        title={deleteModal.title}
+        onConfirm={confirmDelete}
+        onCancel={cancelDelete}
+        isDeleting={deletingId === deleteModal.id}
+      />
     </div>
   )
 }

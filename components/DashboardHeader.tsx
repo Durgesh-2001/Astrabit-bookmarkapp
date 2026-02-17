@@ -19,14 +19,14 @@ export default function DashboardHeader({ userEmail }: DashboardHeaderProps) {
           {/* Left: Logo + Brand */}
           <div className="flex items-center gap-2 sm:gap-3">
             <Image
-              src="/favicon.png"
-              alt="Astra-mark Logo"
-              width={40}
+              src="/logo.svg"
+              alt="Abstra-mark Logo"
+              width={168}
               height={40}
-              className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg object-contain"
+              className="h-6 sm:h-8 w-auto object-contain"
             />
             <h1 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 whitespace-nowrap">
-              Astra-mark
+              Abstra-mark
             </h1>
           </div>
 
@@ -43,7 +43,7 @@ export default function DashboardHeader({ userEmail }: DashboardHeaderProps) {
             {/* Desktop: Home + Sign Out Buttons */}
             <div className="hidden md:flex items-center gap-2">
               <Link
-                href="/home"
+                href="/"
                 className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors duration-200"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -97,7 +97,7 @@ export default function DashboardHeader({ userEmail }: DashboardHeaderProps) {
                     {/* Menu Items */}
                     <div className="py-2">
                       <Link
-                        href="/home"
+                        href="/"
                         className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors duration-200"
                         onClick={() => setIsMenuOpen(false)}
                       >

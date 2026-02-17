@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Astra-mark - Smart Bookmark Manager",
+  title: "Abstra-mark - Smart Bookmark Manager",
   description: "Save and organize your favorite links with real-time sync across all devices",
   icons: {
     icon: '/favicon.png',

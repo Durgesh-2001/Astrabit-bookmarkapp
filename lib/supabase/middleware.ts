@@ -30,7 +30,7 @@ export async function updateSession(request: NextRequest) {
   const pathname = request.nextUrl.pathname
   
   // Skip auth check for public routes
-  const publicRoutes = ['/', '/login', '/home']
+  const publicRoutes = ['/', '/login']
   const isAuthRoute = pathname.startsWith('/auth')
   const isPublicRoute = publicRoutes.includes(pathname)
   

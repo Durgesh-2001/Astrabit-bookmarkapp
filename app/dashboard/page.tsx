@@ -2,7 +2,7 @@ import { Suspense } from 'react'
 import { createClient } from '@/lib/supabase/server'
 import { getBookmarks } from '@/app/actions/bookmarks'
 import BookmarkList from '@/components/BookmarkList'
-import DashboardHeader from '../../components/DashboardHeader'
+import DashboardHeader from '@/components/DashboardHeader'
 
 // Allow caching for better performance
 export const dynamic = 'force-dynamic'
@@ -54,7 +54,7 @@ export default async function DashboardPage() {
             My Bookmarks
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
-            Save and organize your favorite links. Changes sync automatically every 2 seconds.
+            Save and organize your favorite links. Changes sync Instantly.
           </p>
         </div>
 
@@ -81,7 +81,7 @@ export default async function DashboardPage() {
 
             {/* Copyright */}
             <p className="text-xs sm:text-sm text-gray-500">
-              © {new Date().getFullYear()} • Astra-mark 🔖
+              © {new Date().getFullYear()} • Abstra-mark 🔖
             </p>
           </div>
         </div>
