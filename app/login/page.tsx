@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import LoginButton from './LoginButton'
@@ -61,7 +62,7 @@ export default async function LoginPage() {
 
         {/* Back to Home Button */}
         <div className="text-center">
-          <a 
+          <Link 
             href="/"
             className="inline-flex items-center gap-2 px-6 py-3 bg-gray-100 text-gray-700 font-semibold rounded-xl hover:bg-gray-200 transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-105"
           >
@@ -69,7 +70,7 @@ export default async function LoginPage() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
             Back to Home
-          </a>
+          </Link>
         </div>
       </div>
     </div>

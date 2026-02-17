@@ -301,7 +301,7 @@ export default function HomePage() {
             Ready to Get Organized?
           </h2>
           <p className="text-lg sm:text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-            Join thousands of users who have simplified their digital life. Start organizing your bookmarks today. It's completely free.
+            Join thousands of users who have simplified their digital life. Start organizing your bookmarks today. It&apos;s completely free.
           </p>
           <Link 
             href="/login"

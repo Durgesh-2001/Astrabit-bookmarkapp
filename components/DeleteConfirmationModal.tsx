@@ -52,7 +52,7 @@ export default function DeleteConfirmationModal({
             Delete Bookmark?
           </h3>
           <p className="text-gray-600 text-sm leading-relaxed">
-            Are you sure you want to delete <span className="font-semibold text-gray-900">"{title}"</span>? This action cannot be undone.
+            Are you sure you want to delete <span className="font-semibold text-gray-900">&quot;{title}&quot;</span>? This action cannot be undone.
           </p>
         </div>
 
